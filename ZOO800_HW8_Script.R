@@ -1,8 +1,12 @@
+####################################
+########## HW Week 8 ###########
+# Sophia Mummert and Maddie Thall ##
+#####################################
 
+# library section #
 library(gbifdb)
 library(dplyr) 
 library(ggplot2)
-install.packages("maps")
 
 ## import data from gbif ##
 
@@ -13,7 +17,7 @@ gbif_conn <- gbif_remote(backend = "duckdb", bucket = "gbif-open-data-us-east-1"
 tbl <- gbif_conn %>%
   filter(datasetkey == "fe7fa086-1b67-4c90-abe1-123048ead530")
 
-df <- collect(tbl)  # bring into R
+df <- collect(tbl)
 
 ## cutting down our data to information we can graph ##
 
